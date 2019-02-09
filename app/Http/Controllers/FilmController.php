@@ -98,8 +98,8 @@ class FilmController extends Controller
     	$this->validate($data,[
     		'name' => 'required',
     		'description' => 'required',
-    		'realeseDate' => 'required',
-    		'rating' => 'required',
+    		'realeseDate' => 'required|date',
+    		'rating' => 'required|integer',
     		'ticketPrice' => 'required',
     		'country' => 'required',
     		'genre' => 'required',

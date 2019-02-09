@@ -11,6 +11,13 @@
 	<div class="panel-body">
         <div class="row">
             <div class="col-lg-6">
+
+            @if(Session::has('error'))
+                        @include('admin.includes.errors')
+                    @endif
+                    @if(Session::has('success'))
+                        @include('admin.includes.success')
+                    @endif
             	
                <form  method="post"  action="{{url('/films/store')}}" enctype="multipart/form-data">
                     {{csrf_field()}}

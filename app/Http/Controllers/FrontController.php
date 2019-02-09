@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Film;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -12,7 +13,8 @@ class FrontController extends Controller
     }
     public function films()
     {
-    	return view('frontview.home.film');
+        $films = Film::all();
+    	return view('frontview.home.film', compact('films'));
     }
     public function contact()
     {
