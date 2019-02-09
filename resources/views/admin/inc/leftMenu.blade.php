@@ -19,7 +19,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Film Information<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ url('films/add') }}">Add Film</a>
+                                    <a href="{{ url('films/create') }}">Add Film</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('films/all') }}">All Film</a>

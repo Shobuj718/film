@@ -23,13 +23,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('category')->group(function(){
-	Route::get('save', 'CategoryController@index');
-	Route::post('save', 'CategoryController@save');
-	Route::get('all', 'CategoryController@all');
-	Route::get('edit/{id}', 'CategoryController@edit');
-	Route::post('edit/', 'CategoryController@update');
-	Route::get('delete/{id}', 'CategoryController@delete');
+
+/*
+    film route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'films'], function(){
+    Route::get('/all', 'FilmController@index');
+    Route::get('/create', 'FilmController@create');
+    Route::post('/store', 'FilmController@store');
+    Route::get('/{id}/edit', 'FilmController@edit');
+    Route::post('/update/{id}', 'FilmController@update');
+    Route::get('/delete/{id}', 'FilmController@delete');
 });
 
 /*
